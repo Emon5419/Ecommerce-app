@@ -1,12 +1,21 @@
 import express from "express";
 import colors from 'colors';
 import dotenv from "dotenv";
+import morgan from "morgan";
+import connectDB from './config/db.js';
 
 //configs dotenv
 dotenv.config();
 
+//database config
+connectDB();
+
 //rest objects
 const app = express()
+
+//middleware
+app.use(express.json());
+app.use(morgan('dev'));
 
 //rest api 
 app.get('/', (req,res)=>{
@@ -18,5 +27,5 @@ const PORT = process.env.PORT || 8080;
 
 //run listen
 app.listen(PORT, ()=>{
-   console.log(`Server Running in ${process.env.DEV_NODE} node on port ${PORT}`.bgCyan.white);
+   console.log(`Server Running port ${PORT}`.bgYellow.black);
 })
