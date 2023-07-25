@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Layout>
-        <h1>E-commerce App</h1>
+        <h1>Content</h1>
       </Layout>
     </>
   );
