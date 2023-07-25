@@ -4,7 +4,7 @@ import {
    loginController,
    testController 
 } from "../controller/authController.js";
-import { requireSignIn } from "../middelwares/authMiddleware.js";
+import { isAdmin, requireSignIn } from "../middelwares/authMiddleware.js";
 
 
  //router object
@@ -19,6 +19,6 @@ import { requireSignIn } from "../middelwares/authMiddleware.js";
  router.post("/login", loginController);
 
  // Test Routes
- router.get("/test", requireSignIn,  testController);
+ router.get("/test", requireSignIn, isAdmin,testController);
 
  export default router;
