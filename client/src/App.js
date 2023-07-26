@@ -20,7 +20,7 @@ function App() {
 
         <Route path='/policy' element={<Policy />} />
 
-        <Route path='/pageNotFound' element={<PageNotFound />} />
+        <Route path='/*' element={<PageNotFound />} />
 
       </Routes>
 
