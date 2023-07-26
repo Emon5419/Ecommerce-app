@@ -90,3 +90,12 @@ font-family: 'Poppins',sans-serif; */
    color: white;
 }
 /* Page Not Found section css end  */
+/* =========contact us ========= */
+.contactus {
+   margin: 0;
+   padding: 0;
+   height: 70vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
