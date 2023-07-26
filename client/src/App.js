@@ -4,6 +4,7 @@ import Contact from './Pages/Contact';
 import HomePage from './Pages/HomePage';
 import PageNotFound from './Pages/PageNotFound';
 import { Routes, Route } from 'react-router-dom';
+import Register from './Pages/auth/Register';
 
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
       <Routes>
 
         <Route path='/' element={<HomePage/>} />
+
+        <Route path='/register' element={<Register />} />
+
 
         <Route path='/about' element={<About/>} />
 
