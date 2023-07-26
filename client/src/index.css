@@ -8,3 +8,27 @@
 
 /* font-family: 'Playfair Display',serif;
 font-family: 'Poppins',sans-serif; */
+
+
+/* Navbar-CSS */
+.navbar{
+   font-family: 'Poppins', sans-serif;
+   font-size: 17px;
+   line-height: 26px;
+   text-transform: uppercase;
+   box-shadow: 0 8px 6px -6px blue;
+   --webkit-box-shadow: 0 8px 6px -6px blue;
+   border-bottom: 0 solid gray !important;
+
+}
+.NavLink{
+   font-weight: 300 !important;
+}
+.active{
+   border-bottom: 2px solid black;
+}
+.navbar-brand {
+   font-weight: 700;
+   font-family: "roboto", sans-serif;
+   letter-spacing: 3px;
+}
