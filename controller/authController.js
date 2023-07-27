@@ -128,7 +128,7 @@ export const forgotPasswordController = async (req, res) => {
       }
       //check
       const user = await userModel.findOne({ email, answer });
-      //validation
+      
       if (!user) {
          return res.status(404).send({
             success: false,
