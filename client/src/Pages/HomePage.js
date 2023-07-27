@@ -3,7 +3,7 @@ import Layout from "../Components/Layout/Layout.js";
 import { useAuth } from "../context/auth";
 
 const HomePage = () => {
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   return (
     <Layout title={"Home - Best Offers"}>
       <h1>HomePage</h1>
