@@ -4,7 +4,7 @@ import {
    loginController,
    testController,
    forgotPasswordController,
-} from "../controllers/authController.js";
+} from "../controller/authController.js";
 import { isAdmin, requireSignIn } from "../middelwares/authMiddleware.js";
 
 //router object
