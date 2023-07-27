@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import '../../styles/AuthStyles.css';
-import Layout from "../../Components/Layout/Layout";
+import "../../styles/AuthStyles.css";
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
   // form function
@@ -22,6 +23,7 @@ const Register = () => {
         password,
         phone,
         address,
+        answer,
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
@@ -36,7 +38,7 @@ const Register = () => {
   };
 
   return (
-    <Layout title="Register">
+    <Layout title="Register - Ecommer App">
       <div className="form-container ">
         <form onSubmit={handleSubmit}>
           <h4 className="title">REGISTER FORM</h4>
@@ -93,6 +95,17 @@ const Register = () => {
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Enter Your Address"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="form-control"
+              id="exampleInputEmail1"
+              placeholder="What is Your Favorite sports"
               required
             />
           </div>
