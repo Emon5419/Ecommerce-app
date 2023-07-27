@@ -6,6 +6,8 @@ import PageNotFound from './Pages/PageNotFound';
 import { Routes, Route } from 'react-router-dom';
 import Register from './Pages/auth/Register';
 import Login from './Pages/auth/Login';
+import Dashboard from './Pages/user/Dashboard';
+import PrivateRoute from './Components/Layout/Routes/Private';
 
 
 function App() {
@@ -19,6 +21,10 @@ function App() {
         <Route path='/register' element={<Register />} />
 
         <Route path='/login' element={<Login />} />
+
+        <Route path='/dashboard' element={<PrivateRoute />}>
+          <Route path='' element={<Dashboard />} />
+        </Route>
 
         <Route path='/about' element={<About/>} />
 
