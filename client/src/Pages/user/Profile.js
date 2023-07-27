@@ -1,6 +1,6 @@
 import React from "react";
-import UserMenu from "../../components/Layout/UserMenu";
-import Layout from "./../../components/Layout/Layout";
+import UserMenu from "../../Components/Layout/UserMenu";
+import Layout from "./../../Components/Layout/Layout";
 
 const Profile = () => {
    return (

@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "./../../components/Layout/Layout";
-import AdminMenu from "./../../components/Layout/AdminMenu";
+import Layout from "./../../Components/Layout/Layout";
+import AdminMenu from "./../../Components/Layout/AdminMenu";
 
 const CreateCategory = () => {
    return (
