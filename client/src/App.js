@@ -8,6 +8,7 @@ import Register from './Pages/auth/Register';
 import Login from './Pages/auth/Login';
 import Dashboard from './Pages/user/Dashboard';
 import PrivateRoute from './Components/Layout/Routes/Private';
+import ForgotPassword from './Pages/auth/ForgotPassword.js'
 
 
 function App() {
@@ -22,9 +23,12 @@ function App() {
 
         <Route path='/login' element={<Login />} />
 
+        {/* Protected Route */}
         <Route path='/dashboard' element={<PrivateRoute />}>
           <Route path='' element={<Dashboard />} />
         </Route>
+
+        <Route path='/forgot-password' element={<ForgotPassword />} />
 
         <Route path='/about' element={<About/>} />
 
