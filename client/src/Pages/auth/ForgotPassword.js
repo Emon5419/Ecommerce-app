@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Layout from "../../Components/Layout/Layout.js";
+import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
 
-const ForgotPassword = () => {
+const ForgotPasssword = () => {
    const [email, setEmail] = useState("");
    const [newPassword, setNewPassword] = useState("");
    const [answer, setAnswer] = useState("");
@@ -82,4 +82,4 @@ const ForgotPassword = () => {
    );
 };
 
-export default ForgotPassword;
+export default ForgotPasssword;
