@@ -6,8 +6,8 @@ import {
    getSingleProductController,
    productPhotoController,
    updateProductController,
-} from "../controllers/productController.js";
-import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
+} from "../controller/productController.js";
+import { isAdmin, requireSignIn } from "../middelwares/authMiddleware.js";
 import formidable from "express-formidable";
 
 const router = express.Router();
