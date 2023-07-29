@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../Components/Layout/Layout.js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
 
 const ForgotPasssword = () => {
+   const [categories, setCategories] = useState([]);
    const [email, setEmail] = useState("");
    const [newPassword, setNewPassword] = useState("");
    const [answer, setAnswer] = useState("");
@@ -33,8 +34,25 @@ const ForgotPasssword = () => {
          toast.error("Something went wrong");
       }
    };
+   //get all cat
+   const getAllCategory = async () => {
+      try {
+         const { data } = await axios.get("/api/v1/category/get-category");
+         if (data.success) {
+            setCategories(data.category);
+         }
+      } catch (error) {
+         console.log(error);
+         toast.error("Something went wrong in getting category");
+      }
+   };
+
+   useEffect(() => {
+      getAllCategory();
+   }, []);
+
    return (
-      <Layout title={"Forgot Password - Ecommerce APP"}>
+      <Layout title={"Forgot Password-bazar.com"}>
          <div className="form-container ">
             <form onSubmit={handleSubmit}>
                <h4 className="title">RESET PASSWORD</h4>

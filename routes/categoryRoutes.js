@@ -1,12 +1,12 @@
 import express from "express";
 import { isAdmin, requireSignIn } from "../middelwares/authMiddleware.js";
 import {
-  categoryControlller,
+  categoryController,
   createCategoryController,
   deleteCategoryCOntroller,
   singleCategoryController,
   updateCategoryController,
-} from "../controller/authController.js";
+} from "../controller/categoryController.js";
 
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router.put(
 );
 
 //getALl category
-router.get("/get-category", categoryControlller);
+router.get("/get-category", categoryController);
 
 //single category
 router.get("/single-category/:slug", singleCategoryController);
