@@ -1,26 +1,47 @@
 import productModel from "../models/productModel.js";
+
 import fs from "fs";
+
 import slugify from "slugify";
 
 export const createProductController = async (req, res) => {
+
    try {
+
       const { name, description, price, category, quantity, shipping } =
+
          req.fields;
+
       const { photo } = req.files;
+
       //validation
+
       switch (true) {
+
          case !name:
+
             return res.status(500).send({ error: "Name is Required" });
+
          case !description:
+
             return res.status(500).send({ error: "Description is Required" });
+
          case !price:
+
             return res.status(500).send({ error: "Price is Required" });
+
          case !category:
+
             return res.status(500).send({ error: "Category is Required" });
+
          case !quantity:
+
             return res.status(500).send({ error: "Quantity is Required" });
+
          case photo && photo.size > 1000000:
+
             return res
+            
                .status(500)
                .send({ error: "photo is Required and should be less then 1mb" });
       }
@@ -65,7 +86,7 @@ export const getProductController = async (req, res) => {
       console.log(error);
       res.status(500).send({
          success: false,
-         message: "Erorr in getting products",
+         message: "Error in getting products",
          error: error.message,
       });
    }
@@ -86,7 +107,7 @@ export const getSingleProductController = async (req, res) => {
       console.log(error);
       res.status(500).send({
          success: false,
-         message: "Eror while getitng single product",
+         message: "Error while getting single product",
          error,
       });
    }
@@ -104,7 +125,7 @@ export const productPhotoController = async (req, res) => {
       console.log(error);
       res.status(500).send({
          success: false,
-         message: "Erorr while getting photo",
+         message: "Error while getting photo",
          error,
       });
    }
@@ -128,13 +149,13 @@ export const deleteProductController = async (req, res) => {
    }
 };
 
-//upate producta
+// Update Products
 export const updateProductController = async (req, res) => {
    try {
       const { name, description, price, category, quantity, shipping } =
          req.fields;
       const { photo } = req.files;
-      //alidation
+      // Validation
       switch (true) {
          case !name:
             return res.status(500).send({ error: "Name is Required" });
@@ -172,7 +193,7 @@ export const updateProductController = async (req, res) => {
       res.status(500).send({
          success: false,
          error,
-         message: "Error in Updte product",
+         message: "Error in Update product",
       });
    }
 };
