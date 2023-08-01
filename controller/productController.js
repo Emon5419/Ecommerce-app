@@ -47,10 +47,15 @@ export const createProductController = async (req, res) => {
       }
 
       const products = new productModel({ ...req.fields, slug: slugify(name) });
+
       if (photo) {
+
          products.photo.data = fs.readFileSync(photo.path);
+
          products.photo.contentType = photo.type;
+         
       }
+
       await products.save();
       res.status(201).send({
          success: true,
