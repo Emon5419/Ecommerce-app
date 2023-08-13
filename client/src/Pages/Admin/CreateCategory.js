@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import axios from "axios";
 import { Modal } from "antd";
-import AdminMenu from "../../Components/Layout/AdminMenu.js";
-import Layout from "../../Components/Layout/Layout";
-import CategoryForm from "../../Components/Form/categoryForm";
+import toast from "react-hot-toast";
+import React, { useEffect, useState } from "react";
+import Layout from "./../../Components/Layout/Layout";
+import AdminMenu from "./../../Components/Layout/AdminMenu";
+import CategoryForm from "../../Components/Form/categoryForm.js";
+
 const CreateCategory = () => {
+
    const [categories, setCategories] = useState([]);
    const [name, setName] = useState("");
    const [visible, setVisible] = useState(false);
    const [selected, setSelected] = useState(null);
    const [updatedName, setUpdatedName] = useState("");
+
    //handle Form
    const handleSubmit = async (e) => {
+      
       e.preventDefault();
       try {
          const { data } = await axios.post("/api/v1/category/create-category", {
@@ -140,6 +144,7 @@ const CreateCategory = () => {
                         </tbody>
                      </table>
                   </div>
+                
                   <Modal
                      onCancel={() => setVisible(false)}
                      footer={null}
